@@ -11,11 +11,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/portfolio-website-angular",
+            "outputPath": {
+              "base": "dist/portfolio-website-angular"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -28,7 +29,10 @@
               "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chart.js/dist/chart.js"
+            ],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -44,12 +48,14 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractLicenses": true,
+              "namedChunks": false
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -59,12 +65,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "portfolio-website-angular:build"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "portfolio-website-angular:build:production"
+              "buildTarget": "portfolio-website-angular:build:production"
             },
             "development": {
-              "browserTarget": "portfolio-website-angular:build:development"
+              "buildTarget": "portfolio-website-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "portfolio-website-angular:build"
+            "buildTarget": "portfolio-website-angular:build"
           }
         },
         "test": {

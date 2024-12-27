@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { provideRouter, withNavigationErrorHandler } from '@angular/router';
 
 const routes: Routes = [];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  providers: [
+    provideRouter(routes, withNavigationErrorHandler((error) => {
+      console.error('Navigation Error:', error);
+    }))
+  ]
 })
 export class AppRoutingModule { }
