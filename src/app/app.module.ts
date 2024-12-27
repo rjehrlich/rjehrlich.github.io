@@ -27,6 +27,7 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { APP_ID, Inject } from '@angular/core';
 
 
 @NgModule({
@@ -61,7 +62,13 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     MdbTooltipModule,
     MdbValidationModule
   ],
-  providers: [],
+  providers: [{ provide: APP_ID, useValue: 'portfolio-app' }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(@Inject(APP_ID) private appId: string) {
+    if (typeof window !== 'undefined') {
+      document.documentElement.setAttribute('id', this.appId);
+    }
+  }
+}
