@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderNavComponent } from './shared/header-nav/header-nav.component';
 
 @Component({
     selector: 'app-root',
