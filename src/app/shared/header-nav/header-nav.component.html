@@ -3,32 +3,26 @@
     <div class="container-fluid">
       <!-- Logo -->
       <a class="navbar-brand" routerLink="/home">
-        <img src="../../../assets/imgs/Logo Example.svg" alt="Logo" width="100" class="d-inline-block align-text-center">
+        <img src="../../../assets/imgs/Logo Example.svg" alt="Logo" class="d-inline-block align-text-center" width="25%">
       </a>
 
-      <!-- Toggle Button -->
-      <button class="navbar-toggler" type="button" (click)="toggleMenu()" aria-controls="navbarNav"
-              [attr.aria-expanded]="menuVisible" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <!-- Collapsible Menu -->
-      <div class="collapse navbar-collapse justify-content-end" [class.show]="menuVisible" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav nav-underline">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/home" (click)="hideMenu()">Home</a>
+            <a class="nav-link" routerLink="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/about" (click)="hideMenu()">About</a>
+            <a class="nav-link" routerLink="/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/projects" (click)="hideMenu()">Projects</a>
+            <a class="nav-link" routerLink="/projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/resume" (click)="hideMenu()">Resume</a>
+            <a class="nav-link" routerLink="/resume">Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/contact" (click)="hideMenu()">Contact</a>
+            <a class="nav-link" routerLink="/contact">Contact</a>
           </li>
         </ul>
       </div>

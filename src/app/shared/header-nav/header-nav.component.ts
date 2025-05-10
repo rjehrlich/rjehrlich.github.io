@@ -10,43 +10,16 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
 })
 export class HeaderComponent {
-  menuVisible = false;
-  locked = false;
-
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const banner = document.getElementById('banner');
-    const header = document.getElementById('header');
-    if (!banner || !header) return;
-
-    const headerHeight = header.offsetHeight;
-    const bannerBottom = banner.getBoundingClientRect().bottom;
-
-    if (bannerBottom < headerHeight) {
-      header.classList.remove('alt');
-    } else {
-      header.classList.add('alt');
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     }
-  }
-
-  toggleMenu(): void {
-    if (this.locked) return;
-    this.locked = true;
-
-    this.menuVisible = !this.menuVisible;
-    setTimeout(() => {
-      this.locked = false;
-    }, 350);
-  }
-
-  hideMenu(): void {
-    if (this.locked) return;
-    this.locked = true;
-
-    this.menuVisible = false;
-    setTimeout(() => {
-      this.locked = false;
-    }, 350);
-  }
+  } 
 }
 
