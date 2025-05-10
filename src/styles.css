@@ -43,7 +43,7 @@ ol, ul {
 body {
     -ms-overflow-style: scrollbar;
     background-color: #2e3141;
-    background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("assets/images/unsplash_socialcut.jpg");
+    background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("assets/imgs/unsplash_socialcut.jpg");
     background-size: auto, cover;
     background-attachment: fixed, fixed;
     background-position: center, center;
