@@ -1,0 +1,66 @@
+/* Header Navigation Styles */
+#header {
+  /* padding: 5px; */
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Ensure the header stays on top */
+  background-color: #ffffff; /* Fallback color */
+  transition: all 0.3s ease;
+}
+
+#header.alt .navbar {
+    /* background-color: transparent !important;
+    box-shadow: none; */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #header .navbar {
+    background-color: #ffffff !important; /* fallback color if scroll logic fails */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .navbar {
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+  }
+  
+  .navbar.scrolled {
+    height: 50px; /* Shrink height */
+    font-size: 0.9rem; /* Shrink font size */
+    background-color: #f8f9fa; /* Optional: Change background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for effect */
+  }
+  
+  .navbar:not(.scrolled) {
+    height: 100px; /* Original height */
+    font-size: 1rem; /* Original font size */
+    background-color: #ffffff; /* Original background color */
+    box-shadow: none; /* Remove shadow */
+  }
+
+  .navbar-collapse {
+    transition: height 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link {
+    cursor: pointer;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+  }
+.navbar-nav .nav-link.active {
+    color: #007bff;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+    }
+  }  
+
+.navbar-brand {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,44 @@
+/* Projects Section */
+#projects {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 80em;
+  }
+  
+  .project-list {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    align-items: start;
+    justify-content: space-between;
+  }
+  
+  .project-list article {
+    padding: 1.75em 1.75em 0.1em 1.75em;
+    background-color: #353849;
+    border-radius: 5px;
+    margin: 1.5em 3em 1.5em 0;
+  }
+  
+  .project-list article .image {
+    border-radius: 5px 5px 0 0;
+    display: block;
+    margin-bottom: 1.75em;
+    margin-left: -1.75em;
+    margin-top: -1.75em;
+    position: relative;
+    width: calc(100% + 3.5em);
+  }
+  
+  .project-list article .image img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+  }
+  
+  a.learn {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    margin: 0 0 2em 0;
+  }
+  
